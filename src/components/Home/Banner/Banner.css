@@ -1,0 +1,19 @@
+
+.banner{
+    background-image: url("../../../images/home4-slide1.jpg");
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-origin: content-box;
+    background-position: center; 
+    background-size: auto;
+    
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .banner {
+        background-size: 100% 300px;
+    }
+  }
