@@ -1,0 +1,15 @@
+.payment-back{
+    background-image: url("https://i.ibb.co/x54ffxc/coming-soon-teaser-promo-display-background.jpg");
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-origin: content-box;
+    background-position: center; 
+    background-size: 40% 110%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .payment-back {
+        background-size: 100% 300px;
+    }
+  }

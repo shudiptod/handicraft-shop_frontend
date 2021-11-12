@@ -6,6 +6,7 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+
     const [loading, setLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
@@ -64,9 +65,10 @@ const useFirebase = () => {
     const saveUser = (email, displayName) => {
         const user = {
             email,
-            displayName
+            displayName,
+            admin: false
         };
-        fetch('', {
+        fetch('http://localhost:5000/adduser', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -75,6 +77,7 @@ const useFirebase = () => {
         })
             .then();
     }
+
 
 
     const logOut = () => {

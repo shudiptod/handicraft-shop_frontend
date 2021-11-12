@@ -1,34 +1,8 @@
 import React, { useState } from 'react';
 
-const PurchaseForm = ({ user }) => {
-
-    const [purchaseData, setPurchaseData] = useState({});
-
-    const handleInputChange = e => {
-        const field = e.target.name;
-        const value = e.target.defaultValue || e.target.value;
-        const newPurchaseData = { ...purchaseData };
-        newPurchaseData[field] = value;
-        setPurchaseData(newPurchaseData);
-        e.preventDefault();
-    };
-
-    const handleFormSubmit = e => {
-        const newPurchaseData = { ...purchaseData };
-
-        if (newPurchaseData["email"] === undefined) {
-            newPurchaseData["email"] = user?.email;
-            setPurchaseData(newPurchaseData);
-        }
-        if (newPurchaseData["name"] === undefined) {
-            newPurchaseData["name"] = user?.displayName || "Shudipto";
-            setPurchaseData(newPurchaseData);
-        }
+const PurchaseForm = ({ user, handleFormSubmit, handleInputChange }) => {
 
 
-        console.log(purchaseData);
-        e.preventDefault();
-    }
 
     return (
         <div className="w-10/12 my-12">
@@ -37,7 +11,7 @@ const PurchaseForm = ({ user }) => {
             {
                 user?.email && <form className="w-full  flex flex-col items-center" onSubmit={handleFormSubmit}>
                     <input className="w-4/12  border-2 border-gray-500 mb-5 px-2 py-1" name="name"
-                        placeholder="Name" type="text" defaultValue="{user?.name}" onChange={handleInputChange} />
+                        placeholder="Name" type="text" defaultValue={user?.displayName} onChange={handleInputChange} />
                     <input className="w-4/12 border-2 border-gray-500 mb-5 px-2 py-1" name="email"
                         placeholder="Email" defaultValue={user?.email} onChange={handleInputChange} />
                     <input className="w-4/12 border-2 border-gray-500 mb-5 px-2 py-1" name="contact"
@@ -53,3 +27,6 @@ const PurchaseForm = ({ user }) => {
 };
 
 export default PurchaseForm;
+
+
+

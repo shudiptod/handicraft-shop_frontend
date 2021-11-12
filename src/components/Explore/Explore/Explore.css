@@ -1,0 +1,31 @@
+
+
+
+.explore-back{
+    background-image: url("https://i.ibb.co/jZDFyGq/wu-yi-gd9s-BIk-PAMc-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-origin: content-box;
+    background-position: center; 
+    background-size: auto;
+    
+}
+
+.card-back{
+    background-image: url("https://i.ibb.co/5LcwfLk/dave-hoefler-o98da-O1-NW-g-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-origin: content-box;
+    background-position: center; 
+    background-size: auto;
+    
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .explore-back {
+        background-size: 100% 300px;
+    }
+  }

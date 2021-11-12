@@ -39,7 +39,7 @@ const Registration = () => {
     const handleLoginSubmit = (e) => {
         e.preventDefault();
 
-        registerUser(loginData.email, loginData.password);
+        registerUser(loginData.email, loginData.password, loginData.name);
 
 
     }
@@ -71,6 +71,10 @@ const Registration = () => {
                         <h3 className="text-gray-900 font-medium font-poppins text-2xl">Register</h3>
                         <form onSubmit={handleLoginSubmit}
                             className="w-3/12 flex flex-col items-center mt-6 mb-5">
+                            <input type="text" name="name" onChange={handleOnChange}
+                                className="focus:outline-none w-10/12 my-2 px-3 py-1 
+                border-b-2 border-gray-900 font-poppins font-medium focus:border-b-2"
+                                placeholder="User name" />
                             <input type="email" name="email" onChange={handleOnChange}
                                 className="focus:outline-none w-10/12 my-2 px-3 py-1 
                 border-b-2 border-gray-900 font-poppins font-medium focus:border-b-2"

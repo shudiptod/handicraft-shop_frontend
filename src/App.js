@@ -31,13 +31,13 @@ function App() {
             <PrivateRoute path='/payment'>
               <Payment></Payment>
             </PrivateRoute>
-            <PrivateRoute path='/myOrders'>
+            <PrivateRoute path='/myOrders/:email'>
               <MyOrder></MyOrder>
             </PrivateRoute>
             <PrivateRoute path='/addReview'>
               <AddReview></AddReview>
             </PrivateRoute>
-            <PrivateRoute path='/purchase'>
+            <PrivateRoute path='/purchase/:productId'>
               <Purchase></Purchase>
             </PrivateRoute>
             <Route path='/login'>
