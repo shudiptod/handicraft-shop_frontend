@@ -19,7 +19,7 @@ const AddReview = () => {
         const newData = { ...reviewData };
         newData.email = user.email;
         newData.displayName = user.displayName;
-        fetch('http://localhost:5000/review', {
+        fetch('https://aqueous-depths-03250.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -28,6 +28,7 @@ const AddReview = () => {
         })
             .then();
 
+        document.getElementById("review-Form").reset();
         e.preventDefault();
     };
 
@@ -36,7 +37,7 @@ const AddReview = () => {
             <h2 className="text-2xl text-red-500 font-semibold font-poppins">
                 Your Opinion Priors The Highest</h2>
 
-            <form onSubmit={handleFormSubmit} className="container mx-auto flex flex-col items-center">
+            <form id="review-form" onSubmit={handleFormSubmit} className="container mx-auto flex flex-col items-center">
                 <StarRating reviewData={reviewData} setReviewData={setReviewData} />
                 <input type="text" placeholder="Product Name" name="productName"
                     className=" w-4/12 text-justify text-gray-800 font-poppins text-lg

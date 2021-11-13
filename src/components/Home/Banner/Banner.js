@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Banner.css';
-import bannerimg from '../../../images/home4-slide1.jpg';
+
 const Banner = () => {
     return (
         <div className="w-full h-64 lg:h-96 flex justify-center items-center banner">

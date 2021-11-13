@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Dashboard from '../Dashboard/Dashboard';
+import Dashboard from '../../../Dashboard/Dashboard';
 
 import logo from '../../../../images/logo.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 const Header = () => {
     const { user, loading } = useAuth();
@@ -23,7 +23,11 @@ const Header = () => {
             </div>
             {
                 user.email ?
-                    <Dashboard></Dashboard>
+                    <Link to="/dashboard" >
+                        <button className="py-1 px-3 bg-gray-700 text-white font-mono hover:bg-gray-500">
+                            Dashboard
+                        </button>
+                    </Link>
                     :
                     <NavLink to="/login">
                         <button className="py-1 px-3 bg-gray-700 text-white font-mono hover:bg-gray-500">

@@ -5,7 +5,7 @@ const Explore = () => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/products';
+        const url = 'https://aqueous-depths-03250.herokuapp.com/products';
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));

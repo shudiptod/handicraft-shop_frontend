@@ -14,6 +14,11 @@ import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Registration from './components/Registration/Registration';
 import AuthProvider from './context/AuthProvider';
+import AllOrders from './components/Admin/AllOrders/AllOrders';
+import AddProduct from './components/Admin/AddProduct/AddProduct';
+import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
+import ManageProducts from './components/Admin/ManageProducts/ManageProducts';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -28,6 +33,9 @@ function App() {
             <Route path='/explore'>
               <Explore></Explore>
             </Route>
+            <PrivateRoute path='/dashboard'>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
             <PrivateRoute path='/payment'>
               <Payment></Payment>
             </PrivateRoute>
@@ -39,6 +47,19 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/purchase/:productId'>
               <Purchase></Purchase>
+            </PrivateRoute>
+            {/* admin routes  */}
+            <PrivateRoute path='/allorders'>
+              <AllOrders></AllOrders>
+            </PrivateRoute>
+            <PrivateRoute path='/addproduct'>
+              <AddProduct />
+            </PrivateRoute>
+            <PrivateRoute path='/makeadmin'>
+              <MakeAdmin />
+            </PrivateRoute>
+            <PrivateRoute path='/manageProducts'>
+              <ManageProducts />
             </PrivateRoute>
             <Route path='/login'>
               <Login></Login>

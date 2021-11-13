@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link, useHistory } from 'react-router-dom';
 
 import './Card.css';
@@ -15,10 +16,10 @@ const Card = ({ product }) => {
                 <p className="text-gray-900 font-poppins text-sm my-3" >{details.substr(0, 40) + " . . ."}</p>
                 <h3 className="text-gray-900 text-xl text-center">{price + " BDT"}</h3>
 
-                <button className="bg-gray-500 py-1 px-3 mt-3 font-poppins font-semibold text-white
+                <button className="flex items-center justify-between bg-gray-500 py-1 px-3 mt-3 font-poppins font-semibold text-white
                 rounded hover:text-gray-500 hover:bg-white border-2 hover:border-gray-500"
                     onClick={() => history.push(`/purchase/${_id}`)}
-                >Order</button>
+                ><label className="mr-1"><FaShoppingCart></FaShoppingCart></label> Order</button>
 
             </div>
 

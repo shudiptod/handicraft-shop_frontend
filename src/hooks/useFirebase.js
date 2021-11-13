@@ -48,12 +48,13 @@ const useFirebase = () => {
 
     const signInUsingGoogle = () => {
         setLoading(true);
-        signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
                 setAuthError('');
-                const newUser = { email: user.email, displayName: user.displayName };
-                saveUser(newUser);
+
+
+                saveUser(user.email, user.displayName);
             })
             .catch((error) => {
                 setAuthError(error.message);
@@ -68,7 +69,7 @@ const useFirebase = () => {
             displayName,
             admin: false
         };
-        fetch('http://localhost:5000/adduser', {
+        fetch('https://aqueous-depths-03250.herokuapp.com/adduser', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

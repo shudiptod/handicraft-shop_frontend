@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useAuth from '../../../../hooks/useAuth';
-import PurchaseForm from '../PurchaseForm.js/PurchaseForm';
+import PurchaseForm from '../PurchaseForm/PurchaseForm';
 
 
 const Purchase = () => {
@@ -11,7 +11,7 @@ const Purchase = () => {
 
     const [product, setProduct] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/products/${productId}`;
+        const url = `https://aqueous-depths-03250.herokuapp.com/products/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
@@ -44,14 +44,24 @@ const Purchase = () => {
         }
         newPurchaseData.product = product;
         newPurchaseData.userMail = user.email;
-        fetch('http://localhost:5000/order', {
+        newPurchaseData.status = "pending";
+        fetch('https://aqueous-depths-03250.herokuapp.com/order', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newPurchaseData)
         })
-            .then();
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert('Order added Successfully!');
+                }
+                else {
+                    alert('Order not added Successfully!')
+                }
+            });
+        document.getElementById(e.target.id).reset();
         e.preventDefault();
     }
     return (
