@@ -6,7 +6,7 @@ This project is deployed on [Nakshi](https://nakshi-kaj.web.app/).
 
 - Created with **HTML**,**CSS**, **TailWindCSS**, ***ReactJs*** also **React Router**
 - applied Firebase Authentication
-- The website is a landing page of a vacation planner agency.
-- You can **see** vacation packages on the home page.
-- Basic Functionalities: Book Package, Add new Packages, cancel booking, approve and delete booking (admin)
-
+- The website is a landing page of a handicraft shop.
+- You can **see** products on the home page.
+- You can **see** your orders, cancel your order, and give a review.
+- You can **admin** can add and delete product, approve and delete orders, make other users admin.
