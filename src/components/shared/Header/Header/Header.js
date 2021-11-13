@@ -7,18 +7,19 @@ import useAuth from '../../../../hooks/useAuth';
 const Header = () => {
     const { user, loading } = useAuth();
     return (
-        <div className="container mx-auto bg-transparent px-3 text-black flex justify-between items-center">
-            <div className="container w-3/12 flex items-center justify-evenly">
+        <div className="w-full mx-auto bg-transparent px-3 text-black py-4
+         flex flex-col lg:flex-row justify-between items-center">
+            <div className="w-full lg:w-3/12 flex items-center justify-evenly">
                 <NavLink to="/">
                     <div className="container">
                         <img src={logo} />
                     </div>
                 </NavLink>
                 <NavLink to="/">
-                    <h3 className="text-lg">Home</h3>
+                    <h3 className="text-sm bg-gray-700 px-3 py-1 lg:text-lg text-white">Home</h3>
                 </NavLink>
                 <NavLink to="/explore">
-                    <h3 className="text-lg">Explore</h3>
+                    <h3 className="text-sm bg-gray-700 px-3 py-1 lg:text-lg text-white">Explore</h3>
                 </NavLink>
             </div>
             {

@@ -19,6 +19,7 @@ import AddProduct from './components/Admin/AddProduct/AddProduct';
 import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 import ManageProducts from './components/Admin/ManageProducts/ManageProducts';
 import Dashboard from './components/Dashboard/Dashboard';
+import Footer from './components/shared/Footer/Footer';
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer />
         </Router>
       </AuthProvider>
 

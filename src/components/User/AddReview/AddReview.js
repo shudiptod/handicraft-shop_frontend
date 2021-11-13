@@ -15,7 +15,7 @@ const AddReview = () => {
         e.preventDefault();
     }
     const handleFormSubmit = e => {
-
+        e.preventDefault();
         const newData = { ...reviewData };
         newData.email = user.email;
         newData.displayName = user.displayName;
@@ -26,10 +26,18 @@ const AddReview = () => {
             },
             body: JSON.stringify(newData)
         })
-            .then();
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert('Review added Successfully!');
+                }
+                else {
+                    alert('Review not added!')
+                }
+            });
 
-        document.getElementById("review-Form").reset();
-        e.preventDefault();
+        document.getElementById(e.target.id).reset();
+
     };
 
     return (
